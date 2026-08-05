@@ -1,0 +1,5 @@
+HTTP 200  Content-Type: application/json; charset=utf-8
+# /refine/, /index/ and /resolver/ answer with a JSON content type but an XSLT error body.
+# There is no JSON representation for these endpoints - use XML.
+
+<?xml version="1.0" encoding="utf-8"?><root><xslt-error>Missing XSLT file = xslt/externalcontent.api.v1.refine.xslt, skin=unioncatalog</xslt-error></root>

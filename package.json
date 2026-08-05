@@ -1,0 +1,21 @@
+{
+  "name": "cultuurconnect-api-catalogus-webservice",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenAPI 3.1 description of the Cultuurconnect Catalogus Webservices v1 API, with a spec-validation and live contract test suite.",
+  "scripts": {
+    "test": "vitest run",
+    "test:spec": "vitest run test/spec-valid.test.js",
+    "test:live": "vitest run test/live.test.js",
+    "lint:spec": "redocly lint openapi.json",
+    "docs": "redocly preview-docs openapi.json --port 8080",
+    "docs:build": "redocly build-docs openapi.json --output docs/index.html"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-parser": "^10.1.1",
+    "@redocly/cli": "^1.34.2",
+    "dotenv": "^16.4.7",
+    "vitest": "^3.2.4"
+  }
+}

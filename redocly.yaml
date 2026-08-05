@@ -1,0 +1,12 @@
+extends:
+  - recommended
+
+rules:
+  # The service requires the trailing slash: /staging/zbb/search returns 404,
+  # /staging/zbb/search/ returns 200. The path templates reflect the real API.
+  no-path-trailing-slash: off
+
+  # XML-first API: 4xx/5xx bodies are documented as application/xml via shared
+  # components.responses, and the examples there are XML strings against an object
+  # schema, which this rule cannot type-check.
+  no-invalid-media-type-examples: off

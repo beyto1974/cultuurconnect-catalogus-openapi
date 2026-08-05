@@ -1,0 +1,69 @@
+<aquabrowser version="1" before-rendering-time="138" total-time="1" detail-level="Default">
+  <meta>
+    <rctx>ARXJO47CMBCA4fFaKEKcgJKOzokcJLgAJ6C3xo$wAxObODEvcY7VHhf4m6@4BcgFVNB4l$x4LPezP3e60cPvLWg@nGopYN4jRSlBgJgpZ9q6NdSZmCZD0Vxy6ojD@JBL0M54GtFy$HphfJDvky8cFnvkMfzAt@9KrP8qAbAskVJ0OCGn42esVE5pUkxDIa$e1lYlM8wiy92LyWbMD9VjdurK6NyrqVu93bT1Gw==</rctx>
+  </meta>
+  <id nativeid="10438540" ds="library/m/vlacc" translation="ID" search-method="id" search-term="|library/marc/vlacc|10438540" search-type="precise">|library/marc/vlacc|10438540</id>
+  <frabl translation="FRBR Nummer (FRABL)" search-method="frabl" search-term="39681F00FAF1AC00" search-type="searcher">39681F00FAF1AC00</frabl>
+  <detail-page>https://www.bibliotheek.be/catalogus?itemid=%7clibrary%2fmarc%2fvlacc%7c10438540</detail-page>
+  <copyright>
+                  Op de metadata (titelbeschrijvingen) aangeboden in de API berusten intellectuele eigendomsrechten en databankrechten, zie http://www.cultuurconnect.be/diensten/bibliotheekportalen/api.
+               </copyright>
+  <titles>
+    <title translation="Titel" search-method="title" search-term="Hoe vermoord ik mijn familie?" search-type="fuzzy">Hoe vermoord ik mijn familie?</title>
+    <short-title translation="Korte titel">Hoe vermoord ik mijn familie?</short-title>
+    <origin-title translation="Oorspr. titel">How to kill your family</origin-title>
+  </titles>
+  <authors>
+    <main-author search-method="author" search-term="Bella Mackie" search-type="searcher" translation="Auteur" firstname="Bella" lastname="Mackie" type="aut" localized-type="Auteur" creatortype="person" main="true">Bella Mackie</main-author>
+    <author search-method="author" search-term="Harmien Robroch" search-type="searcher" translation="Auteur" firstname="Harmien" lastname="Robroch" type="trl" localized-type="Vertaler" creatortype="person">Harmien Robroch</author>
+  </authors>
+  <formats>
+    <format translation="Formaat" search-method="format" search-term="book" search-type="searcher" raw="book">Boek</format>
+  </formats>
+  <identifiers>
+    <isbn-id translation="ISBN" note="paperback">9789044366587</isbn-id>
+    <normalized-isbn-id translation="ISBN (genormaliseerd)">9789044366587</normalized-isbn-id>
+  </identifiers>
+  <publication>
+    <publishers>
+      <publisher translation="Uitgever" search-method="publisher" search-term="The House of Books" search-type="searcher" year="2023" place="Amsterdam">The House of Books</publisher>
+    </publishers>
+  </publication>
+  <languages>
+    <original-language translation="Oorspr. taal" search-method="languageo" search-term="eng" search-type="searcher" raw="eng">Engels</original-language>
+  </languages>
+  <subjects>
+    <topical-subject translation="Onderwerp" search-method="subject" search-term="Moorden ; Nederland" search-type="searcher">Moorden ; Nederland</topical-subject>
+    <topical-subject translation="Onderwerp" search-method="subject" search-term="Wraak" search-type="searcher">Wraak</topical-subject>
+    <topical-subject translation="Onderwerp" search-method="subject" search-term="Familie" search-type="searcher">Familie</topical-subject>
+    <local-subject translation="Extra onderwerp" search-method="subject" search-term="VN 45ste Detective- &amp; Thrillergids, 2 sterren" search-type="searcher">VN 45ste Detective- &amp; Thrillergids, 2 sterren</local-subject>
+  </subjects>
+  <genres>
+    <genre translation="Genre" search-method="genre" search-term="Romans" search-type="searcher">Romans</genre>
+  </genres>
+  <description>
+    <pages translation="Pagina's">382 p.</pages>
+    <physical-description translation="Kenmerken">382 p.</physical-description>
+  </description>
+  <target-audiences>
+    <target-audience translation="Doelgroep" search-method="targetaudience" search-term="ageAdults" search-type="searcher" raw="ageAdults">Volwassenen</target-audience>
+  </target-audiences>
+  <ratings />
+  <undup-info key="|library/marc/vlacc|10438540" cnt="7" sort="year" frabl="39681F00FAF1AC00" frabl-global-count="20" frabl-key1="how to kill your family" frabl-key2="mackie,bella" translation="Informatie over dubbele items" undup-all-search="frabl=0x39681F00FAF1AC00MFFFFFF">
+    <format text="Boek" icon="/assets/resources/img/mat/book.png?skin=unioncatalog&amp;bld=20260805.061630" translation="Formaat" undup-all-search="frabl=0x39681F00FAF1ADFAMFFF" format-raw="book">
+      <item extid="|wise|4717452" frabl="39681F00FAF1ADFA" language="Onbekend" language-raw="und" year="2021" publisher="" globalholdingscount="3" />
+    </format>
+  </undup-info>
+  <enrich-info translation="Verrijkingsinformatie">
+    <match beid="4685994" dsname="wise" extid="|wise|4685994" criterion="vlaccid" rule="rest" />
+  </enrich-info>
+  <custom>
+    <roserank translation="Bibliografische relevantie factor">3700</roserank>
+    <holdings-count translation="Aantal versies">185</holdings-count>
+    <images />
+  </custom>
+  <services>
+    <service name="bibliotheek-files" type="jscallback" url="https://webservices.bibliotheek.be/index.php?output=json&amp;VLACCnr=10438540&amp;ISBN=9789044366587&amp;ISSN=&amp;ISMN=&amp;EAN=&amp;func=filesavailable" />
+    <service name="wikipedia-author" type="jscallback" url="https://nl.wikipedia.org/w/api.php?titles=Bella+Mackie&amp;action=query&amp;prop=pageprops|info|extracts|links|pageimages&amp;redirects&amp;format=json&amp;continue&amp;inprop=url" />
+  </services>
+</aquabrowser>

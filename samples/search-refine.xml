@@ -1,0 +1,342 @@
+<aquabrowser version="1" before-rendering-time="712" total-time="134" detail-level="Default">
+  <meta>
+    <count>293428</count>
+    <page>1</page>
+    <rctx>ASXEzQnCMBgA0C8JJUiuvYh4cIJStfOUtI1J4MtvE4ROIQ7VeRxBwcN7BJgADn0sbtiWpKJCl$5pCPGm69U8GYGDk9YDA5GDk@4@aU52zGpeo8pRasX68zwaW4zVBn$KeEhcFYUP3du9pW9O6IsTgGP1NvhZFolBA8ClyyGUDm2qdum2aeI1IzQeyRc=</rctx>
+  </meta>
+  <feedbacks>
+    <search-availability-ids>
+      <ids>
+        <id extid="|library/marc/vlacc|9172822" cnt="1">1107909</id>
+      </ids>
+      <frabl-ids />
+      <post>%7clibrary%2fmarc%2fvlacc%7c9172822=1107909
+</post>
+      <frabl-post />
+    </search-availability-ids>
+  </feedbacks>
+  <results>
+    <result>
+      <id nativeid="9172822" ds="library/m/vlacc" translation="ID" search-method="id" search-term="|library/marc/vlacc|9172822" search-type="precise">|library/marc/vlacc|9172822</id>
+      <detail-page>https://www.bibliotheek.be/catalogus?itemid=%7clibrary%2fmarc%2fvlacc%7c9172822</detail-page>
+      <copyright>
+                  Op de metadata (titelbeschrijvingen) aangeboden in de API berusten intellectuele eigendomsrechten en databankrechten, zie http://www.cultuurconnect.be/diensten/bibliotheekportalen/api.
+               </copyright>
+      <titles>
+        <title translation="Titel" search-method="title" search-term="Overspel : roman" search-type="fuzzy">Overspel : roman</title>
+        <short-title translation="Korte titel">Overspel : roman</short-title>
+        <origin-title translation="Oorspr. titel">Adultério</origin-title>
+      </titles>
+      <authors>
+        <main-author search-method="author" search-term="Paulo Coelho" search-type="searcher" translation="Auteur" firstname="Paulo" lastname="Coelho" type="aut" localized-type="Auteur" creatortype="person" main="true">Paulo Coelho</main-author>
+        <author search-method="author" search-term="Piet Janssen" search-type="searcher" translation="Auteur" firstname="Piet" lastname="Janssen" type="trl" localized-type="Vertaler" creatortype="person">Piet Janssen</author>
+      </authors>
+      <formats>
+        <format translation="Formaat" search-method="format" search-term="book" search-type="searcher" raw="book">Boek</format>
+      </formats>
+      <publication>
+        <publishers>
+          <publisher translation="Uitgever" search-method="publisher" search-term="De Arbeiderspers" search-type="searcher" year="2014" place="Amsterdam">De Arbeiderspers</publisher>
+        </publishers>
+        <editions>
+          <edition translation="Editie">1</edition>
+        </editions>
+      </publication>
+      <languages>
+        <original-language translation="Oorspr. taal" search-method="languageo" search-term="por" search-type="searcher" raw="por">Portugees</original-language>
+      </languages>
+      <description>
+        <pages translation="Pagina's">285 p.</pages>
+        <physical-description translation="Kenmerken">285 p.</physical-description>
+      </description>
+      <genres>
+        <genre translation="Genre" search-method="genre" search-term="Romans" search-type="searcher">Romans</genre>
+      </genres>
+      <subjects>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="Ontrouw" search-type="searcher">Ontrouw</topical-subject>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="Identiteitscrisis ; filosofie" search-type="searcher">Identiteitscrisis ; filosofie</topical-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Huwelijk" search-type="searcher">Huwelijk</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Zonder genre" search-type="searcher">Zonder genre</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Libelle" search-type="searcher">Libelle</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Psychologische literatuur" search-type="searcher">Psychologische literatuur</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Braziliaanse letterkunde" search-type="searcher">Braziliaanse letterkunde</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Top 2014 roman" search-type="searcher">Top 2014 roman</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="identiteitscrisis" search-type="searcher">identiteitscrisis</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Huwelijk (volwassenen fictie)" search-type="searcher">Huwelijk (volwassenen fictie)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Ontrouw (volwassenen fictie)" search-type="searcher">Ontrouw (volwassenen fictie)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Identiteitscrisis (volw. verhalend)" search-type="searcher">Identiteitscrisis (volw. verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Ontrouw (volw. verhalend)" search-type="searcher">Ontrouw (volw. verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Huwelijk (volwass. fictie)" search-type="searcher">Huwelijk (volwass. fictie)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Ontrouw (volwass. fictie)" search-type="searcher">Ontrouw (volwass. fictie)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Huwelijk (volw.)" search-type="searcher">Huwelijk (volw.)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Ontrouw (volw.)" search-type="searcher">Ontrouw (volw.)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Huwelijk (volwassenen verhalend)" search-type="searcher">Huwelijk (volwassenen verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Ontrouw (volwassenen verhalend)" search-type="searcher">Ontrouw (volwassenen verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Onmogelijke liefde (volwassenen verhalend)" search-type="searcher">Onmogelijke liefde (volwassenen verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Onmogelijke liefde" search-type="searcher">Onmogelijke liefde</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Sprinter 2014" search-type="searcher">Sprinter 2014</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Brazilië ; literatuur ; 21ste eeuw" search-type="searcher">Brazilië ; literatuur ; 21ste eeuw</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Algemeen en literair" search-type="searcher">Algemeen en literair</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Overspel" search-type="searcher">Overspel</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Braziliaanse literatuur" search-type="searcher">Braziliaanse literatuur</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="top tien" search-type="searcher">top tien</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Romans; Huwelijk; Ontrouw" search-type="searcher">Romans; Huwelijk; Ontrouw</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Huwelijk; Ontrouw" search-type="searcher">Huwelijk; Ontrouw</local-subject>
+      </subjects>
+      <target-audiences>
+        <target-audience translation="Doelgroep" search-method="targetaudience" search-term="ageAdults" search-type="searcher" raw="ageAdults">Volwassenen</target-audience>
+      </target-audiences>
+      <frabl translation="FRBR Nummer (FRABL)" search-method="frabl" search-term="4B3F405AF9F1AC00" search-type="searcher">4B3F405AF9F1AC00</frabl>
+      <identifiers>
+        <isbn-id translation="ISBN" note="hardback">9789029589697</isbn-id>
+        <normalized-isbn-id translation="ISBN (genormaliseerd)">9789029589697</normalized-isbn-id>
+      </identifiers>
+      <undup-info key="|library/marc/vlacc|9172822" cnt="5" sort="year" frabl="4B3F405AF9F1AC00" frabl-global-count="18" frabl-key1="adulterio" frabl-key2="coelho,paulo" translation="Informatie over dubbele items" undup-all-search="frabl=0x4B3F405AF9F1AC00MFFFFFF" />
+      <enrich-info translation="Verrijkingsinformatie">
+        <match beid="1107909" dsname="wise" extid="|wise|1107909" criterion="vlaccid" rule="rest" />
+      </enrich-info>
+      <custom>
+        <roserank translation="Bibliografische relevantie factor">3582</roserank>
+        <holdings-count translation="Aantal versies">199</holdings-count>
+        <images />
+      </custom>
+    </result>
+  </results>
+  <facets>
+    <facet id="Format" translation="Materiaal">
+      <value count="208355" id="book" translation="Boek" />
+      <value count="53482" id="digital" translation="Digitaal materiaal" />
+      <value count="44754" id="daisycd" translation="Daisy-cd" />
+      <value count="21612" id="ebook" translation="E-boek" />
+      <value count="9136" id="braille" translation="Braille" />
+      <value count="7917" id="largetype" translation="Grote letter" />
+      <value count="3344" id="easyreading" translation="Makkelijk lezen" />
+      <value count="1510" id="cd" translation="Cd" />
+      <value count="1356" id="audiobook" translation="Luisterboek" />
+      <value count="792" id="dvdvideo" translation="Dvd" />
+    </facet>
+    <facet id="FictieNonfictie" translation="Fictie of Non-fictie">
+      <value count="65004" id="Fictie" translation="Fictie" />
+      <value count="2062" id="NonFictie" translation="Non-Fictie" />
+    </facet>
+    <facet id="MuziekFilm" translation="Muziek of film">
+      <value count="982" id="Muziek" translation="Muziek" />
+      <value count="460" id="Film" translation="Film" />
+    </facet>
+    <facet id="Language" translation="Taal">
+      <value count="29028" id="dut" translation="Nederlands" />
+      <value count="16052" id="eng" translation="Engels" />
+      <value count="15714" id="fre" translation="Frans" />
+      <value count="2692" id="ger" translation="Duits" />
+      <value count="1350" id="spa" translation="Spaans" />
+      <value count="764" id="ita" translation="Italiaans" />
+      <value count="358" id="rus" translation="Russisch" />
+      <value count="265" id="rum" translation="Roemeens" />
+      <value count="225" id="tur" translation="Turks" />
+      <value count="207" id="ara" translation="Arabisch" />
+    </facet>
+    <facet id="pubYearRange" translation="Uitgegeven tussen">
+      <value count="40893" id="1_2010" translation="2010-..." />
+      <value count="9711" id="2_2000" translation="2000-2009" />
+      <value count="3433" id="3_1990" translation="1990-1999" />
+      <value count="2982" id="4_1980" translation="1980-1989" />
+      <value count="2239" id="5_1970" translation="1970-1979" />
+      <value count="4627" id="5_OlderThan50" translation="Meer dan 50 jaar geleden" />
+    </facet>
+    <facet id="pubYear" translation="Jaar van uitgave">
+      <value count="2378" id="2026" translation="2026" />
+      <value count="2662" id="2025" translation="2025" />
+      <value count="1392" id="2024" translation="2024" />
+      <value count="989" id="2023" translation="2023" />
+      <value count="1349" id="2022" translation="2022" />
+      <value count="2321" id="2021" translation="2021" />
+      <value count="2595" id="2020" translation="2020" />
+      <value count="2740" id="2019" translation="2019" />
+      <value count="2979" id="2018" translation="2018" />
+      <value count="3070" id="2017" translation="2017" />
+      <value count="2975" id="2016" translation="2016" />
+      <value count="2899" id="2015" translation="2015" />
+      <value count="2730" id="2014" translation="2014" />
+      <value count="2397" id="2013" translation="2013" />
+      <value count="2678" id="2012" translation="2012" />
+      <value count="2555" id="2011" translation="2011" />
+      <value count="2182" id="2010" translation="2010" />
+      <value count="1431" id="2009" translation="2009" />
+      <value count="1166" id="2008" translation="2008" />
+      <value count="1350" id="2007" translation="2007" />
+      <value count="1092" id="2006" translation="2006" />
+      <value count="857" id="2005" translation="2005" />
+      <value count="1043" id="2004" translation="2004" />
+      <value count="1021" id="2003" translation="2003" />
+      <value count="644" id="2002" translation="2002" />
+      <value count="559" id="2001" translation="2001" />
+      <value count="548" id="2000" translation="2000" />
+      <value count="425" id="1999" translation="1999" />
+      <value count="470" id="1998" translation="1998" />
+      <value count="327" id="1997" translation="1997" />
+      <value count="390" id="1996" translation="1996" />
+      <value count="312" id="1995" translation="1995" />
+      <value count="337" id="1994" translation="1994" />
+      <value count="327" id="1993" translation="1993" />
+      <value count="282" id="1992" translation="1992" />
+      <value count="262" id="1991" translation="1991" />
+      <value count="301" id="1990" translation="1990" />
+      <value count="235" id="1989" translation="1989" />
+      <value count="252" id="1988" translation="1988" />
+      <value count="244" id="1987" translation="1987" />
+      <value count="258" id="1986" translation="1986" />
+      <value count="305" id="1985" translation="1985" />
+      <value count="327" id="1984" translation="1984" />
+      <value count="361" id="1983" translation="1983" />
+      <value count="346" id="1982" translation="1982" />
+      <value count="329" id="1981" translation="1981" />
+      <value count="325" id="1980" translation="1980" />
+      <value count="312" id="1979" translation="1979" />
+      <value count="269" id="1978" translation="1978" />
+      <value count="226" id="1969" translation="1969" />
+    </facet>
+    <facet id="Leeftijd" translation="Leeftijd">
+      <value count="1" id="e_age_0-2" translation="Vanaf 0-2 jaar" />
+      <value count="82" id="g_age_3-5" translation="Vanaf 3-5 jaar" />
+      <value count="596" id="j_age_6-8" translation="Vanaf 6-8 jaar" />
+      <value count="1908" id="n_age_9-11" translation="Vanaf 9-11 jaar" />
+      <value count="3203" id="p_age_12-14" translation="Vanaf 12-14 jaar" />
+      <value count="15235" id="q_age_15" translation="Vanaf 15 jaar" />
+      <value count="2193" id="x_age_nvt" translation="Alle leeftijden" />
+      <value count="265450" id="y_age_adults" translation="Volwassenen" />
+      <value count="20747" id="z_age_allyouth" translation="Alle jeugd" />
+    </facet>
+    <facet id="Topic" translation="Onderwerpen">
+      <value count="20140" id="1945-" translation="1945-" />
+      <value count="17189" id="19de eeuw" translation="19de eeuw" />
+      <value count="14183" id="geschiedenis" translation="geschiedenis" />
+      <value count="12177" id="jeugd" translation="jeugd" />
+      <value count="11861" id="Nederland" translation="Nederland" />
+      <value count="11830" id="Liefde" translation="Liefde" />
+      <value count="10906" id="kinderen" translation="kinderen" />
+      <value count="9866" id="Wereldoorlog II" translation="Wereldoorlog II" />
+      <value count="9160" id="Familie" translation="Familie" />
+      <value count="8693" id="Verenigde Staten" translation="Verenigde Staten" />
+    </facet>
+    <facet id="Genre" translation="Genre">
+      <value count="234757" id="Romans" translation="Romans" />
+      <value count="46371" id="Luisterboeken" translation="Luisterboeken" />
+      <value count="39163" id="Thrillers" translation="Thrillers" />
+      <value count="26890" id="Verfilmde boeken" translation="Verfilmde boeken" />
+      <value count="26028" id="Detectives" translation="Detectives" />
+      <value count="24717" id="Romantische literatuur" translation="Romantische literatuur" />
+      <value count="17432" id="Historische literatuur" translation="Historische literatuur" />
+      <value count="12013" id="Fantasy" translation="Fantasy" />
+      <value count="10629" id="Spionageromans" translation="Spionageromans" />
+      <value count="9157" id="Streek- en familieromans" translation="Streek- en familieromans" />
+    </facet>
+    <facet id="Bekroning" translation="Bekroning">
+      <value count="721" id="Man Booker Prize" translation="Man Booker Prize" />
+      <value count="501" id="Pulitzer Prize for Fiction" translation="Pulitzer Prize for Fiction" />
+      <value count="350" id="Prix Goncourt" translation="Prix Goncourt" />
+      <value count="339" id="Libris Literatuurprijs" translation="Libris Literatuurprijs" />
+      <value count="297" id="F. Bordewijkprijs" translation="F. Bordewijkprijs" />
+      <value count="291" id="Inktaap" translation="Inktaap" />
+      <value count="286" id="National Book Award" translation="National Book Award" />
+      <value count="263" id="Glazen Sleutel" translation="Glazen Sleutel" />
+      <value count="259" id="Premio Strega" translation="Premio Strega" />
+      <value count="245" id="NS Publieksprijs voor het Nederlandse Boek" translation="NS Publieksprijs voor het Nederlandse Boek" />
+    </facet>
+    <facet id="Auteur" translation="Auteur">
+      <value count="1671" id="Agatha Christie" translation="Agatha Christie" />
+      <value count="1557" id="Georges Simenon" translation="Georges Simenon" />
+      <value count="1182" id="Stephen King 1947-" translation="Stephen King 1947-" />
+      <value count="1138" id="Nora Roberts" translation="Nora Roberts" />
+      <value count="919" id="Danielle Steel 1947-" translation="Danielle Steel 1947-" />
+      <value count="809" id="Jolanda te Lindert" translation="Jolanda te Lindert" />
+      <value count="735" id="Gerda van Wageningen 1946-" translation="Gerda van Wageningen 1946-" />
+      <value count="711" id="Lia Belt" translation="Lia Belt" />
+      <value count="699" id="A.C. Baantjer" translation="A.C. Baantjer" />
+      <value count="689" id="Corry van Bree" translation="Corry van Bree" />
+    </facet>
+    <facet id="Componist" translation="Componist">
+      <value count="29" id="Robert Schumann 1810-1856" translation="Robert Schumann 1810-1856" />
+      <value count="27" id="Johan Helmich Roman 1694-1758" translation="Johan Helmich Roman 1694-1758" />
+      <value count="22" id="Alain Romans" translation="Alain Romans" />
+      <value count="15" id="Maurice Ravel 1875-1937" translation="Maurice Ravel 1875-1937" />
+      <value count="14" id="Claude Debussy 1862-1918" translation="Claude Debussy 1862-1918" />
+      <value count="14" id="Ludwig van Beethoven 1770-1827" translation="Ludwig van Beethoven 1770-1827" />
+      <value count="12" id="Dmitri Sjostakovitsj 1906-1975" translation="Dmitri Sjostakovitsj 1906-1975" />
+      <value count="11" id="Ottorino Respighi 1879-1936" translation="Ottorino Respighi 1879-1936" />
+      <value count="11" id="Wolfgang Amadeus Mozart 1756-1791" translation="Wolfgang Amadeus Mozart 1756-1791" />
+      <value count="11" id="Pjotr Iljitsj Tsjaikovski 1840-1893" translation="Pjotr Iljitsj Tsjaikovski 1840-1893" />
+    </facet>
+    <facet id="Inlezer" translation="Inlezer">
+      <value count="242" id="Ann Tuybens" translation="Ann Tuybens" />
+      <value count="239" id="Martine Derycke" translation="Martine Derycke" />
+      <value count="214" id="Hilde Groeninck" translation="Hilde Groeninck" />
+      <value count="173" id="Marie-Louise Weenink" translation="Marie-Louise Weenink" />
+      <value count="170" id="Annette Van Ooijen" translation="Annette Van Ooijen" />
+      <value count="147" id="Gi Mateusen" translation="Gi Mateusen" />
+      <value count="135" id="Solange Dejonghe" translation="Solange Dejonghe" />
+      <value count="134" id="Lieve Bruynooghe" translation="Lieve Bruynooghe" />
+      <value count="126" id="Bart Ponsaerts" translation="Bart Ponsaerts" />
+      <value count="118" id="Kris De Groef" translation="Kris De Groef" />
+    </facet>
+    <facet id="Uitvoerder" translation="Uitvoerder">
+      <value count="88" id="L'Orchestre de la Suisse Romande" translation="L'Orchestre de la Suisse Romande" />
+      <value count="69" id="Jo Wyatt" translation="Jo Wyatt" />
+      <value count="34" id="Ernest Ansermet 1883-1969" translation="Ernest Ansermet 1883-1969" />
+      <value count="23" id="Roman Trekel" translation="Roman Trekel" />
+      <value count="20" id="Johan Helmich Roman 1694-1758" translation="Johan Helmich Roman 1694-1758" />
+      <value count="15" id="Robert Schumann 1810-1856" translation="Robert Schumann 1810-1856" />
+      <value count="14" id="Romane" translation="Romane" />
+      <value count="14" id="Roman Kofman" translation="Roman Kofman" />
+      <value count="13" id="Romane 1959-" translation="Romane 1959-" />
+      <value count="12" id="Marek Janowski 1939-" translation="Marek Janowski 1939-" />
+    </facet>
+    <facet id="Series" translation="Reeks">
+      <value count="1916" id="Collection folio Junior Premiers romans" translation="Collection folio Junior Premiers romans" />
+      <value count="1057" id="Grote letter bibliotheek" translation="Grote letter bibliotheek" />
+      <value count="1047" id="Le livre de poche Classiques" translation="Le livre de poche Classiques" />
+      <value count="979" id="Nrf Essais" translation="Nrf Essais" />
+      <value count="752" id="Poema pocket Thriller" translation="Poema pocket Thriller" />
+      <value count="709" id="De Geus Spanning" translation="De Geus Spanning" />
+      <value count="691" id="le livre de poche" translation="le livre de poche" />
+      <value count="670" id="Dwarsligger" translation="Dwarsligger" />
+      <value count="625" id="Zwarte beertjes Thriller" translation="Zwarte beertjes Thriller" />
+      <value count="601" id="Rainbow pocketboeken" translation="Rainbow pocketboeken" />
+    </facet>
+    <facet id="Uitgever" translation="Uitgever">
+      <value count="53937" id="Luisterpunt" translation="Luisterpunt" />
+      <value count="5724" id="Boekerij" translation="Boekerij" />
+      <value count="4639" id="De Bezige Bij" translation="De Bezige Bij" />
+      <value count="4346" id="Luitingh-Sijthoff" translation="Luitingh-Sijthoff" />
+      <value count="3727" id="Meulenhoff" translation="Meulenhoff" />
+      <value count="3159" id="Grote Letter Bibliotheek" translation="Grote Letter Bibliotheek" />
+      <value count="3115" id="HarperCollins" translation="HarperCollins" />
+      <value count="3069" id="The House of Books" translation="The House of Books" />
+      <value count="2987" id="De Geus" translation="De Geus" />
+      <value count="2665" id="Prometheus" translation="Prometheus" />
+    </facet>
+    <facet id="Recensie" translation="Recensie">
+      <value count="67913" id="NBD Biblion" translation="NBD Biblion" />
+      <value count="12256" id="Leeswolf" translation="Leeswolf" />
+      <value count="3866" id="De Standaard" translation="De Standaard" />
+      <value count="2373" id="De Volkskrant" translation="De Volkskrant" />
+      <value count="2214" id="De Morgen" translation="De Morgen" />
+      <value count="2178" id="Knack" translation="Knack" />
+      <value count="1614" id="Trouw" translation="Trouw" />
+      <value count="1158" id="Pluizer" translation="Pluizer" />
+      <value count="1106" id="Leeswelp" translation="Leeswelp" />
+      <value count="800" id="Humo" translation="Humo" />
+    </facet>
+    <facet id="Platform" translation="Platform">
+      <value count="1" id="PSP" translation="PSP" />
+      <value count="1" id="Playstation 5" translation="Playstation 5" />
+      <value count="1" id="Xbox 360" translation="Xbox 360" />
+      <value count="1" id="Playstation 3" translation="Playstation 3" />
+    </facet>
+  </facets>
+  <sort>
+    <option id="relevance" active="true" translation="relevantie" />
+    <option id="year" translation="jaar" />
+    <option id="title" translation="titel" />
+    <option id="author" translation="auteur" />
+  </sort>
+</aquabrowser>

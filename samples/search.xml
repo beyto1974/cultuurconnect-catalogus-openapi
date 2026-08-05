@@ -1,0 +1,218 @@
+<aquabrowser version="1" before-rendering-time="366" total-time="137" detail-level="Default">
+  <meta>
+    <count>33</count>
+    <page>1</page>
+    <rctx>AV3HQQ6CMBAAwC2VEMOVizEk$gIi8T$k0NKuLlssbTQ8wvgoHqZnD3MYAbKEAi7$xq29R2Ojc$k1Ls4$SV9pkgL2k0IGCbVOuBrWp9UzG@6ryI@YBTMsswmzska29dA5jA6to59YjooWkwFs1VZln0Ls3oUAOCRGz4OKirwFgHMTvI8N4SOhbta$L1IgyJnEFw==</rctx>
+  </meta>
+  <feedbacks>
+    <search-availability-ids>
+      <ids>
+        <id extid="|library/marc/vlacc|6967964" cnt="1">790988</id>
+        <id extid="|library/marc/vlacc|7482417" cnt="1">854295</id>
+      </ids>
+      <frabl-ids>
+        <id extid="|library/marc/vlacc|10576344" frabl="61B74575E8F1ACA0" cnt="3">5065406,3451675,3769066</id>
+        <id extid="|wise|1504991" frabl="61B74575E8F0A0A0" cnt="2">1504991,3125250</id>
+        <id extid="|wise|2055710" frabl="61B74575E8F13CA0" cnt="2">2055710,3929069</id>
+        <id extid="|library/marc/vlacc|10576344" frabl="61B74575E8F1ACA0" cnt="3">5065406,3451675,3769066</id>
+        <id extid="|wise|1504991" frabl="61B74575E8F0A0A0" cnt="2">1504991,3125250</id>
+        <id extid="|wise|2055710" frabl="61B74575E8F13CA0" cnt="2">2055710,3929069</id>
+      </frabl-ids>
+      <post>%7clibrary%2fmarc%2fvlacc%7c6967964=790988
+%7clibrary%2fmarc%2fvlacc%7c7482417=854295
+</post>
+      <frabl-post>%7clibrary%2fmarc%2fvlacc%7c10576344=5065406%2c3451675%2c3769066
+%7cwise%7c1504991=1504991%2c3125250
+%7cwise%7c2055710=2055710%2c3929069
+%7clibrary%2fmarc%2fvlacc%7c10576344=5065406%2c3451675%2c3769066
+%7cwise%7c1504991=1504991%2c3125250
+%7cwise%7c2055710=2055710%2c3929069
+</frabl-post>
+    </search-availability-ids>
+  </feedbacks>
+  <results>
+    <result>
+      <id nativeid="6967964" ds="library/m/vlacc" translation="ID" search-method="id" search-term="|library/marc/vlacc|6967964" search-type="precise">|library/marc/vlacc|6967964</id>
+      <detail-page>https://www.bibliotheek.be/catalogus?itemid=%7clibrary%2fmarc%2fvlacc%7c6967964</detail-page>
+      <copyright>
+                  Op de metadata (titelbeschrijvingen) aangeboden in de API berusten intellectuele eigendomsrechten en databankrechten, zie http://www.cultuurconnect.be/diensten/bibliotheekportalen/api.
+               </copyright>
+      <titles>
+        <title translation="Titel" search-method="title" search-term="Duizend schitterende zonnen" search-type="fuzzy">Duizend schitterende zonnen</title>
+        <short-title translation="Korte titel">Duizend schitterende zonnen</short-title>
+        <origin-title translation="Oorspr. titel">A thousand splendid suns</origin-title>
+        <origin-title translation="Parallelle titel">1000 schitterende zonnen</origin-title>
+      </titles>
+      <authors>
+        <main-author search-method="author" search-term="Khaled Hosseini" search-type="searcher" translation="Auteur" firstname="Khaled" lastname="Hosseini" type="aut" localized-type="Auteur" creatortype="person" main="true">Khaled Hosseini</main-author>
+      </authors>
+      <formats>
+        <format translation="Formaat" search-method="format" search-term="book" search-type="searcher" raw="book">Boek</format>
+      </formats>
+      <publication>
+        <publishers>
+          <publisher translation="Uitgever" search-method="publisher" search-term="De Bezige Bij" search-type="searcher" year="2008" place="Amsterdam">De Bezige Bij</publisher>
+        </publishers>
+      </publication>
+      <languages>
+        <original-language translation="Oorspr. taal" search-method="languageo" search-term="eng" search-type="searcher" raw="eng">Engels</original-language>
+      </languages>
+      <description>
+        <pages translation="Pagina's">396 p.</pages>
+        <physical-description translation="Kenmerken">396 p.</physical-description>
+      </description>
+      <genres>
+        <genre translation="Genre" search-method="genre" search-term="Romans" search-type="searcher">Romans</genre>
+      </genres>
+      <subjects>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="Afghanistan ; 1945-" search-type="searcher">Afghanistan ; 1945-</topical-subject>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="Vriendschap ; kinderen" search-type="searcher">Vriendschap ; kinderen</topical-subject>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="Vrouwen ; 19de eeuw" search-type="searcher">Vrouwen ; 19de eeuw</topical-subject>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="1945-" search-type="searcher">1945-</topical-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Romans" search-type="searcher">Romans</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Afghanistan ; [ romans ]" search-type="searcher">Afghanistan ; [ romans ]</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="De 100 beste boeken (Snoecks/SdL, 2007)" search-type="searcher">De 100 beste boeken (Snoecks/SdL, 2007)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Vitrine 5 tips (Standaard der Letteren, 2007)" search-type="searcher">Vitrine 5 tips (Standaard der Letteren, 2007)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Top 10 boeken" search-type="searcher">Top 10 boeken</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Leestips 14+ (niveau 3 : uitdagend)" search-type="searcher">Leestips 14+ (niveau 3 : uitdagend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Afghanistan ; 1945" search-type="searcher">Afghanistan ; 1945</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Ontspannende romans" search-type="searcher">Ontspannende romans</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Tip van de bib!" search-type="searcher">Tip van de bib!</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="vriendschap" search-type="searcher">vriendschap</local-subject>
+      </subjects>
+      <target-audiences>
+        <target-audience translation="Doelgroep" search-method="targetaudience" search-term="ageAdults" search-type="searcher" raw="ageAdults">Volwassenen</target-audience>
+      </target-audiences>
+      <frabl translation="FRBR Nummer (FRABL)" search-method="frabl" search-term="61B74575E8F1AC00" search-type="searcher">61B74575E8F1AC00</frabl>
+      <identifiers>
+        <isbn-id translation="ISBN">9789023425762</isbn-id>
+        <isbn-id translation="ISBN">9789023426066</isbn-id>
+        <normalized-isbn-id translation="ISBN (genormaliseerd)">9789023425762</normalized-isbn-id>
+        <normalized-isbn-id translation="ISBN (genormaliseerd)">9789023426066</normalized-isbn-id>
+      </identifiers>
+      <undup-info key="|library/marc/vlacc|6967964" cnt="15" sort="year" frabl="61B74575E8F1AC00" frabl-global-count="83" frabl-key1="a thousand splendid suns" frabl-key2="hosseini,khaled" translation="Informatie over dubbele items" undup-all-search="frabl=0x61B74575E8F1AC00MFFFFFF">
+        <format text="Boek" icon="/assets/resources/img/mat/book.png?skin=unioncatalog&amp;bld=20260805.061630" translation="Formaat" undup-all-search="frabl=0x61B74575E8F1ACA0MFFF" format-raw="book">
+          <item extid="|library/marc/vlacc|10576344" frabl="61B74575E8F1ACA0" language="Nederlands" language-raw="dut" year="2025" publisher="De Bezige Bij" globalholdingscount="15" />
+          <item extid="|library/marc/vlacc|10346111" frabl="61B74575E8F1ACA0" language="Nederlands" language-raw="dut" year="2021" publisher="De Bezige Bij" globalholdingscount="9" />
+          <item extid="|wise|3769066" frabl="61B74575E8F1ACA0" language="Nederlands" language-raw="dut" year="2016" publisher="De Bezige Bij" globalholdingscount="3" />
+        </format>
+        <format text="E-boek" icon="/assets/resources/img/mat/ebook.png?skin=unioncatalog&amp;bld=20260805.061630" translation="Formaat" undup-all-search="frabl=0x61B74575E8F0A0A0MFFF" format-raw="ebook">
+          <item extid="|wise|1504991" frabl="61B74575E8F0A0A0" language="Nederlands" language-raw="dut" year="2009" publisher="De Bezige Bij" globalholdingscount="1" />
+          <item extid="|wise|3125250" frabl="61B74575E8F0A0A0" language="Nederlands" language-raw="dut" year="" publisher="" globalholdingscount="1" />
+        </format>
+        <format text="Grote letter" icon="/assets/resources/img/mat/large type.png?skin=unioncatalog&amp;bld=20260805.061630" translation="Formaat" undup-all-search="frabl=0x61B74575E8F13CA0MFFF" format-raw="largetype">
+          <item extid="|wise|2055710" frabl="61B74575E8F13CA0" language="Nederlands" language-raw="dut" year="2008" publisher="Stichting Uitgeverij XL" globalholdingscount="367" />
+        </format>
+      </undup-info>
+      <enrich-info translation="Verrijkingsinformatie">
+        <match beid="790988" dsname="wise" extid="|wise|790988" criterion="vlaccid" rule="rest" />
+      </enrich-info>
+      <custom>
+        <roserank translation="Bibliografische relevantie factor">7138</roserank>
+        <holdings-count translation="Aantal versies">86</holdings-count>
+        <images />
+      </custom>
+    </result>
+    <result>
+      <id nativeid="7482417" ds="library/m/vlacc" translation="ID" search-method="id" search-term="|library/marc/vlacc|7482417" search-type="precise">|library/marc/vlacc|7482417</id>
+      <detail-page>https://www.bibliotheek.be/catalogus?itemid=%7clibrary%2fmarc%2fvlacc%7c7482417</detail-page>
+      <copyright>
+                  Op de metadata (titelbeschrijvingen) aangeboden in de API berusten intellectuele eigendomsrechten en databankrechten, zie http://www.cultuurconnect.be/diensten/bibliotheekportalen/api.
+               </copyright>
+      <titles>
+        <title translation="Titel" search-method="title" search-term="Duizend schitterende zonnen" search-type="fuzzy">Duizend schitterende zonnen</title>
+        <short-title translation="Korte titel">Duizend schitterende zonnen</short-title>
+        <origin-title translation="Oorspr. titel">A thousand splendid suns</origin-title>
+      </titles>
+      <authors>
+        <main-author search-method="author" search-term="Khaled Hosseini" search-type="searcher" translation="Auteur" firstname="Khaled" lastname="Hosseini" type="aut" localized-type="Auteur" creatortype="person" main="true">Khaled Hosseini</main-author>
+        <author search-method="author" search-term="Sander De Heer" search-type="searcher" translation="Auteur" firstname="Sander" lastname="Heer" preposition="De" type="nrt" localized-type="Verteller" creatortype="person">Sander De Heer</author>
+      </authors>
+      <formats>
+        <format translation="Formaat" search-method="format" search-term="audiobook" search-type="searcher" raw="audiobook">Luisterboek</format>
+        <format translation="Formaat" search-method="format" search-term="cd" search-type="searcher" raw="cd">Cd</format>
+      </formats>
+      <publication>
+        <publishers>
+          <publisher translation="Uitgever" search-method="publisher" search-term="De Bezige Bij" search-type="searcher" year="2010" place="Amsterdam">De Bezige Bij</publisher>
+        </publishers>
+        <editions>
+          <edition translation="Editie">1</edition>
+        </editions>
+      </publication>
+      <languages>
+        <original-language translation="Oorspr. taal" search-method="languageo" search-term="eng" search-type="searcher" raw="eng">Engels</original-language>
+      </languages>
+      <description>
+        <pages translation="Pagina's">7 cd's</pages>
+        <physical-description translation="Kenmerken">7 cd's</physical-description>
+      </description>
+      <genres>
+        <genre translation="Genre" search-method="genre" search-term="Romans" search-type="searcher">Romans</genre>
+        <genre translation="Genre" search-method="genre" search-term="Luisterboeken" search-type="searcher">Luisterboeken</genre>
+      </genres>
+      <series>
+        <series-title translation="In de reeks" search-method="series" search-term="Zoem De Bezige Bij audioboek" search-type="searcher" query="Zoem De Bezige Bij audioboek">Zoem : De Bezige Bij audioboek</series-title>
+      </series>
+      <subjects>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="Afghanistan ; 1945-" search-type="searcher">Afghanistan ; 1945-</topical-subject>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="Vriendschap ; kinderen" search-type="searcher">Vriendschap ; kinderen</topical-subject>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="Vrouwen ; 19de eeuw" search-type="searcher">Vrouwen ; 19de eeuw</topical-subject>
+        <topical-subject translation="Onderwerp" search-method="subject" search-term="1945-" search-type="searcher">1945-</topical-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="LUI" search-type="searcher">LUI</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Literatuur - gesproken woord: Nederlands" search-type="searcher">Literatuur - gesproken woord: Nederlands</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="luisterboeken" search-type="searcher">luisterboeken</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Leestips 14+ (niveau 3 : uitdagend)" search-type="searcher">Leestips 14+ (niveau 3 : uitdagend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="sociale literatuur" search-type="searcher">sociale literatuur</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="vrouwen" search-type="searcher">vrouwen</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Verfilmde boeken" search-type="searcher">Verfilmde boeken</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Luisterboeken (genre)" search-type="searcher">Luisterboeken (genre)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="luisterboek" search-type="searcher">luisterboek</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Afghanistan ; 1945- (volw. verhalend)" search-type="searcher">Afghanistan ; 1945- (volw. verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Vriendschap (volw. verhalend)" search-type="searcher">Vriendschap (volw. verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Vrouwen ; Afghanistan (volw. verhalend)" search-type="searcher">Vrouwen ; Afghanistan (volw. verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Luisterboeken (volwassenen verhalend)" search-type="searcher">Luisterboeken (volwassenen verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Afghanistan ; 1945- (volwassenen verhalend)" search-type="searcher">Afghanistan ; 1945- (volwassenen verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Vrouwen ; Afghanistan (volwassenen verhalend)" search-type="searcher">Vrouwen ; Afghanistan (volwassenen verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="Vriendschap (volwassenen verhalend)" search-type="searcher">Vriendschap (volwassenen verhalend)</local-subject>
+        <local-subject translation="Extra onderwerp" search-method="subject" search-term="luisterboek ; Afghanistan 1945- ; Vriendschap; Vrouwen; Luisterboeken" search-type="searcher">luisterboek ; Afghanistan 1945- ; Vriendschap; Vrouwen; Luisterboeken</local-subject>
+      </subjects>
+      <target-audiences>
+        <target-audience translation="Doelgroep" search-method="targetaudience" search-term="ageAdults" search-type="searcher" raw="ageAdults">Volwassenen</target-audience>
+      </target-audiences>
+      <frabl translation="FRBR Nummer (FRABL)" search-method="frabl" search-term="61B74575E8F0B400" search-type="searcher">61B74575E8F0B400</frabl>
+      <identifiers>
+        <isbn-id translation="ISBN">9789023450627</isbn-id>
+        <normalized-isbn-id translation="ISBN (genormaliseerd)">9789023450627</normalized-isbn-id>
+      </identifiers>
+      <undup-info key="|library/marc/vlacc|7482417" cnt="0" sort="year" frabl="61B74575E8F0B400" frabl-global-count="83" frabl-key1="a thousand splendid suns" frabl-key2="hosseini,khaled" translation="Informatie over dubbele items" undup-all-search="frabl=0x61B74575E8F0B400MFFFFFF">
+        <format text="Boek" icon="/assets/resources/img/mat/book.png?skin=unioncatalog&amp;bld=20260805.061630" translation="Formaat" undup-all-search="frabl=0x61B74575E8F1ACA0MFFF" format-raw="book">
+          <item extid="|library/marc/vlacc|10576344" frabl="61B74575E8F1ACA0" language="Nederlands" language-raw="dut" year="2025" publisher="De Bezige Bij" globalholdingscount="15" />
+          <item extid="|library/marc/vlacc|10346111" frabl="61B74575E8F1ACA0" language="Nederlands" language-raw="dut" year="2021" publisher="De Bezige Bij" globalholdingscount="9" />
+          <item extid="|wise|3769066" frabl="61B74575E8F1ACA0" language="Nederlands" language-raw="dut" year="2016" publisher="De Bezige Bij" globalholdingscount="3" />
+        </format>
+        <format text="E-boek" icon="/assets/resources/img/mat/ebook.png?skin=unioncatalog&amp;bld=20260805.061630" translation="Formaat" undup-all-search="frabl=0x61B74575E8F0A0A0MFFF" format-raw="ebook">
+          <item extid="|wise|1504991" frabl="61B74575E8F0A0A0" language="Nederlands" language-raw="dut" year="2009" publisher="De Bezige Bij" globalholdingscount="1" />
+          <item extid="|wise|3125250" frabl="61B74575E8F0A0A0" language="Nederlands" language-raw="dut" year="" publisher="" globalholdingscount="1" />
+        </format>
+        <format text="Grote letter" icon="/assets/resources/img/mat/large type.png?skin=unioncatalog&amp;bld=20260805.061630" translation="Formaat" undup-all-search="frabl=0x61B74575E8F13CA0MFFF" format-raw="largetype">
+          <item extid="|wise|2055710" frabl="61B74575E8F13CA0" language="Nederlands" language-raw="dut" year="2008" publisher="Stichting Uitgeverij XL" globalholdingscount="367" />
+        </format>
+      </undup-info>
+      <enrich-info translation="Verrijkingsinformatie">
+        <match beid="854295" dsname="wise" extid="|wise|854295" criterion="vlaccid" rule="rest" />
+      </enrich-info>
+      <custom>
+        <roserank translation="Bibliografische relevantie factor">3818</roserank>
+        <holdings-count translation="Aantal versies">46</holdings-count>
+        <images />
+      </custom>
+    </result>
+  </results>
+  <sort>
+    <option id="relevance" active="true" translation="relevantie" />
+    <option id="year" translation="jaar" />
+    <option id="title" translation="titel" />
+    <option id="author" translation="auteur" />
+  </sort>
+</aquabrowser>
