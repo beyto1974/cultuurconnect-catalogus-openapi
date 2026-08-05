@@ -13,6 +13,8 @@ import {
   FIXTURES,
   exercisedPaths,
   repoRoot,
+  redact,
+  TOKEN,
 } from './helpers.js'
 import { buildXmlModel, walkXml, parseXml } from './xml-model.js'
 
@@ -152,6 +154,34 @@ describe('GET /search/?output=json (undocumented)', () => {
     const json = await get('/search/', { query: { ...query, output: 'json' } })
     expect(hasElement(xml.text, 'facets')).toBe(true)
     expect(Object.keys(parseJson(json.text))).toEqual(['meta', 'results'])
+  })
+})
+
+describe('the API key never escapes into output', () => {
+  // CI uploads coverage/ as a build artifact, and on a public repository anyone can
+  // download it. Every request URL carries ?authorization=<key>, so any value a test can
+  // print has to be redacted first.
+  it('keeps the key out of the returned url', async () => {
+    const res = await get('/search/', { query: { q: 'test', pagesize: 1 } })
+    expect(res.url).not.toContain(TOKEN)
+    expect(res.url).toContain('authorization=YOUR_API_KEY')
+  })
+
+  it('keeps the key out of request failure messages', async () => {
+    // Unroutable host, so this fails fast without touching the real service.
+    const url = buildUrl('https://localhost:1', '/search/', { query: { q: 'test' } })
+    await expect(call(url, { attempts: 1, timeoutMs: 1500 })).rejects.toThrow(
+      /request failed/,
+    )
+    const err = await call(url, { attempts: 1, timeoutMs: 1500 }).catch((e) => e)
+    expect(err.message).not.toContain(TOKEN)
+  })
+
+  it('redacts the key wherever it appears', () => {
+    expect(redact(`x ${TOKEN} y`)).toBe('x YOUR_API_KEY y')
+    expect(redact('https://h/search/?q=a&authorization=deadbeefdeadbeef&lang=nl')).toBe(
+      'https://h/search/?q=a&authorization=YOUR_API_KEY&lang=nl',
+    )
   })
 })
 

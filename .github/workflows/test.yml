@@ -98,6 +98,22 @@ jobs:
         if: always()
         run: rm -f .env
 
+      # Artifacts on a public repository are downloadable by anyone, and GitHub's secret
+      # masking covers log output only — not the bytes inside an uploaded file. The suite
+      # redacts the key before it can reach any output, and this fails the job outright if
+      # that ever regresses, rather than publishing the artifact anyway.
+      - name: Refuse to upload an artifact containing the key
+        if: steps.key.outputs.available == 'true'
+        env:
+          TOKEN: ${{ secrets.CATALOGUS_API_TOKEN }}
+        run: |
+          if grep -rqF "$TOKEN" coverage/ 2>/dev/null; then
+            echo "::error title=Key found in coverage output::Refusing to upload. Check the redact() helper in test/helpers.js."
+            grep -rlF "$TOKEN" coverage/ || true
+            exit 1
+          fi
+          echo "coverage/ is clean"
+
       - uses: actions/upload-artifact@v4
         if: steps.key.outputs.available == 'true'
         with:

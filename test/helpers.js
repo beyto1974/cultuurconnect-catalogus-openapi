@@ -66,6 +66,21 @@ export function buildUrl(base, pathTemplate, { path = {}, query = {} } = {}) {
 const TRANSIENT = /ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENETUNREACH|UND_ERR|terminated|fetch failed/i
 
 /**
+ * Strip the API key out of anything that might be printed.
+ *
+ * Every request URL carries `?authorization=<key>`, so a failure message or a returned
+ * `url` would otherwise put the live key into CI logs and — more damagingly — into the
+ * uploaded coverage/test-results.json artifact, which is world-readable on a public
+ * repository. GitHub masks registered secrets in log output but not inside artifact files.
+ */
+export function redact(value) {
+  return String(value)
+    .split(TOKEN)
+    .join('YOUR_API_KEY')
+    .replace(/([?&]authorization=)[^&\s]+/gi, '$1YOUR_API_KEY')
+}
+
+/**
  * fetch with a hard per-attempt timeout and one retry on transient network faults.
  * Staging occasionally resets connections; a bare failure there is not a spec defect.
  */
@@ -86,7 +101,9 @@ export async function call(url, { method = 'GET', body, headers = {}, timeoutMs 
         contentType: (res.headers.get('content-type') ?? '').split(';')[0].trim(),
         text,
         bom: buf[0] === 0xef && buf[1] === 0xbb && buf[2] === 0xbf,
-        url,
+        // Redacted so a test that reports this value cannot carry the key into a log
+        // or an artifact. Nothing re-requests it, so the key is not needed here.
+        url: redact(url),
       }
     } catch (err) {
       lastError = err
@@ -96,7 +113,9 @@ export async function call(url, { method = 'GET', body, headers = {}, timeoutMs 
       clearTimeout(timer)
     }
   }
-  throw new Error(`request failed: ${url}\n  ${lastError?.message ?? lastError}`)
+  throw new Error(
+    `request failed: ${redact(url)}\n  ${redact(lastError?.message ?? lastError)}`,
+  )
 }
 
 /**
