@@ -1,0 +1,72 @@
+name: pages
+
+on:
+  push:
+    branches: [master, main]
+    # Only rebuild when something the site is made of actually changes.
+    paths:
+      - openapi.json
+      - redocly.yaml
+      - package.json
+      - package-lock.json
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a run finish rather than cancelling it mid-deploy, but never deploy two at once.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: build site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # Fail the deployment rather than publishing a spec that does not lint.
+      - name: Lint openapi.json
+        run: npm run lint:spec
+
+      - name: Build the site
+        run: |
+          mkdir -p site
+          # The human-readable reference.
+          npx redocly build-docs openapi.json --output site/index.html
+          # The machine-readable spec, fetchable by generators and editors.
+          cp openapi.json site/openapi.json
+          # Serve the captured samples alongside it — they are part of the documentation.
+          cp -r samples site/samples
+          # A spec URL should be usable cross-origin by tools like Swagger Editor.
+          cat > site/_headers <<'EOF'
+          /openapi.json
+            Access-Control-Allow-Origin: *
+            Content-Type: application/json
+          EOF
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    name: deploy to Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

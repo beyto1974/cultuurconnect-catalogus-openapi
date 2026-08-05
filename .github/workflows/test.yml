@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+# This repository is public, so every job runs on a GitHub-hosted runner. Anyone can open a
+# pull request, and a workflow triggered by one executes that contributor's code, so it needs
+# to run on a throwaway machine. GitHub-hosted minutes are free for public repositories.
+
 jobs:
   # Everything that needs no credentials and no network: spec validation, lint, and the
   # structural test suite. This is the gate that must pass for every push and every PR,
@@ -21,7 +25,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - run: npm ci
@@ -53,7 +57,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - run: npm ci

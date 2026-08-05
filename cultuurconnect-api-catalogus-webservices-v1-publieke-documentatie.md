@@ -2,8 +2,8 @@
 
 | Catalogus webservices v1 | Col2 |
 | --- | --- |
-| lynn.vankerckhove@cultuurconnect.be |  |
-| johan.mijs@cultuurconnect.be |  |
+| helpdesk@cultuurconnect.be |  |
+| helpdesk@cultuurconnect.be |  |
 |  |  |
 | Framework |  |
 | op alle profielen | Er is 1 endpoint (cataloguswebservices.bibliotheek.be) voor alle profielen met als subdirectory het profiel (bv. /wetteren/ ). <br>Voorbeelden zijn meestal van de catalogus van bibliotheek Wetteren, indien anders is dit aangeduid in de opmerkingen. |
