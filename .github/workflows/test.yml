@@ -1,0 +1,105 @@
+name: test
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Everything that needs no credentials and no network: spec validation, lint, and the
+  # structural test suite. This is the gate that must pass for every push and every PR,
+  # including PRs from forks.
+  spec:
+    name: spec validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint openapi.json
+        run: npm run lint:spec
+
+      - name: Structural tests
+        run: npm run test:spec
+
+      - name: Build docs
+        run: npm run docs:build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docs
+          path: docs/index.html
+
+  # Contract tests against the live staging API. These need a key, so they are skipped
+  # wherever secrets are unavailable — notably PRs from forks, where GitHub withholds
+  # secrets by design. A skipped run is reported as such rather than failing the build,
+  # because a missing key is not a defect in the change under test.
+  live:
+    name: live contract tests
+    runs-on: ubuntu-latest
+    needs: spec
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Check for an API key
+        id: key
+        env:
+          TOKEN: ${{ secrets.CATALOGUS_API_TOKEN }}
+        run: |
+          if [ -n "$TOKEN" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Live tests skipped::No CATALOGUS_API_TOKEN secret is available (expected on forked pull requests)."
+          fi
+
+      - name: Run live suite with coverage
+        if: steps.key.outputs.available == 'true'
+        env:
+          TOKEN: ${{ secrets.CATALOGUS_API_TOKEN }}
+        run: |
+          printf 'TOKEN=%s\n' "$TOKEN" > .env
+          npm run test:coverage -- --reporter=json --reporter=default \
+            --outputFile.json=coverage/test-results.json
+
+      - name: Regenerate badges
+        if: steps.key.outputs.available == 'true'
+        run: npm run badges
+
+      # The badges are committed files. If a run produces different numbers than the ones
+      # in the repo, say so instead of quietly moving on — the README would otherwise be
+      # advertising stale figures.
+      - name: Check the committed badges are current
+        if: steps.key.outputs.available == 'true'
+        run: |
+          if ! git diff --quiet -- badges/; then
+            echo "::warning title=Badges are stale::badges/ differs from this run. Run 'npm run test:coverage && npm run badges' and commit the result."
+            git --no-pager diff --stat -- badges/
+          fi
+
+      - name: Always remove the key
+        if: always()
+        run: rm -f .env
+
+      - uses: actions/upload-artifact@v4
+        if: steps.key.outputs.available == 'true'
+        with:
+          name: coverage
+          path: coverage/

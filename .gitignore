@@ -1,6 +1,7 @@
 node_modules/
 .env
 docs/
+coverage/
 
 # Unredacted vendor documentation: contains a live production API key.
 # Keep it locally, never commit it. The committed copy has the keys replaced

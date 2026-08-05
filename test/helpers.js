@@ -39,10 +39,17 @@ export function stagingBase(spec) {
 }
 
 /**
+ * Spec paths the live suite actually exercised, for the API-coverage badge.
+ * Recorded here because buildUrl is the single funnel every live request goes through.
+ */
+export const exercisedPaths = new Set()
+
+/**
  * Build a request URL from a spec path template plus query params.
  * `authorization` is added automatically unless explicitly set to null.
  */
 export function buildUrl(base, pathTemplate, { path = {}, query = {} } = {}) {
+  exercisedPaths.add(pathTemplate)
   const filled = pathTemplate.replace(/\{(\w+)\}/g, (_, name) => {
     if (!(name in path)) throw new Error(`missing path parameter '${name}' for ${pathTemplate}`)
     return path[name]

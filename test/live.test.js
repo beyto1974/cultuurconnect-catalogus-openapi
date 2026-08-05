@@ -1,4 +1,6 @@
-import { describe, it, expect, beforeAll } from 'vitest'
+import { describe, it, expect, beforeAll, afterAll } from 'vitest'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import {
   loadSpec,
   stagingBase,
@@ -9,6 +11,8 @@ import {
   xmlError,
   hasElement,
   FIXTURES,
+  exercisedPaths,
+  repoRoot,
 } from './helpers.js'
 import { buildXmlModel, walkXml, parseXml } from './xml-model.js'
 
@@ -37,6 +41,27 @@ beforeAll(() => {
   spec = loadSpec()
   base = stagingBase(spec)
   expect(base).toBe('https://cataloguswebservices.bibliotheek.be/staging/zbb')
+})
+
+/**
+ * Record which of the spec's paths this run actually called, so the API-coverage badge
+ * reports something measured rather than asserted. Paths the token cannot reach show up
+ * here as uncovered, which is the honest reading.
+ */
+afterAll(() => {
+  const paths = Object.keys(spec.paths)
+  const covered = paths.filter((p) => exercisedPaths.has(p))
+  const report = {
+    total: paths.length,
+    covered: covered.length,
+    pct: Math.round((covered.length / paths.length) * 1000) / 10,
+    uncovered: paths.filter((p) => !exercisedPaths.has(p)),
+  }
+  mkdirSync(resolve(repoRoot, 'coverage'), { recursive: true })
+  writeFileSync(
+    resolve(repoRoot, 'coverage/api-coverage.json'),
+    JSON.stringify(report, null, 2) + '\n',
+  )
 })
 
 describe('GET /search/', () => {
