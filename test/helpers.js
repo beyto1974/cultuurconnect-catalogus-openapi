@@ -10,7 +10,23 @@ export const specPath = resolve(repoRoot, 'openapi.json')
 dotenv.config({ path: resolve(repoRoot, '.env'), quiet: true })
 
 export const TOKEN = process.env.TOKEN
-if (!TOKEN) throw new Error('TOKEN missing from .env — the live tests cannot run without it')
+
+/**
+ * Demand the key, but only at the point a request actually needs it.
+ *
+ * Throwing at import time would take the structural suite down with it: that suite imports
+ * this module for loadSpec/serverUrl, needs no credential, and is exactly the job that has
+ * to pass on pull requests from forks — where GitHub withholds secrets by design.
+ */
+function requireToken() {
+  if (!TOKEN) {
+    throw new Error(
+      'TOKEN missing from .env — the live suite needs a key. ' +
+        'The structural suite (npm run test:spec) runs without one.',
+    )
+  }
+  return TOKEN
+}
 
 /** The spec document, read fresh from disk. */
 export function loadSpec() {
@@ -49,6 +65,7 @@ export const exercisedPaths = new Set()
  * `authorization` is added automatically unless explicitly set to null.
  */
 export function buildUrl(base, pathTemplate, { path = {}, query = {} } = {}) {
+  requireToken()
   exercisedPaths.add(pathTemplate)
   const filled = pathTemplate.replace(/\{(\w+)\}/g, (_, name) => {
     if (!(name in path)) throw new Error(`missing path parameter '${name}' for ${pathTemplate}`)
@@ -74,10 +91,11 @@ const TRANSIENT = /ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENETUNREACH|UND_ERR|terminated
  * repository. GitHub masks registered secrets in log output but not inside artifact files.
  */
 export function redact(value) {
-  return String(value)
-    .split(TOKEN)
-    .join('YOUR_API_KEY')
-    .replace(/([?&]authorization=)[^&\s]+/gi, '$1YOUR_API_KEY')
+  const text = String(value)
+  // Guard the split: with no key loaded there is nothing to substitute, and
+  // String.split(undefined) would not do what is meant here.
+  const withoutKey = TOKEN ? text.split(TOKEN).join('YOUR_API_KEY') : text
+  return withoutKey.replace(/([?&]authorization=)[^&\s]+/gi, '$1YOUR_API_KEY')
 }
 
 /**
