@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="144" height="20" role="img" aria-label="API endpoints: 8/9">
-  <title>API endpoints: 8/9</title>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="144" height="20" role="img" aria-label="API endpoints: 9/9">
+  <title>API endpoints: 9/9</title>
   <linearGradient id="s" x2="0" y2="100%">
     <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
     <stop offset="1" stop-opacity=".1"/>
@@ -7,13 +7,13 @@
   <clipPath id="r"><rect width="144" height="20" rx="3" fill="#fff"/></clipPath>
   <g clip-path="url(#r)">
     <rect width="104" height="20" fill="#555"/>
-    <rect x="104" width="40" height="20" fill="#97ca00"/>
+    <rect x="104" width="40" height="20" fill="#4c1"/>
     <rect width="144" height="20" fill="url(#s)"/>
   </g>
   <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110">
     <text aria-hidden="true" x="520" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="840">API endpoints</text>
     <text x="520" y="140" transform="scale(.1)" textLength="840">API endpoints</text>
-    <text aria-hidden="true" x="1240" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="200">8/9</text>
-    <text x="1240" y="140" transform="scale(.1)" textLength="200">8/9</text>
+    <text aria-hidden="true" x="1240" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="200">9/9</text>
+    <text x="1240" y="140" transform="scale(.1)" textLength="200">9/9</text>
   </g>
 </svg>

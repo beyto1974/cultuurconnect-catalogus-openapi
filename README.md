@@ -115,7 +115,7 @@ One host serves every library profile; the profile is the first path segment. St
 | `env`     | `""` (production), `/staging` | `https://cataloguswebservices.bibliotheek.be/staging/zbb` |
 | `profile` | `zbb`, `wetteren`, `gent`, …  | `https://cataloguswebservices.bibliotheek.be/wetteren`    |
 
-`/holdings/{holdingPath}` sits outside the profile prefix and carries its own server override.
+`/holdings/{holdingPath}/` sits outside the profile prefix and carries its own server override.
 
 ## Sample responses
 
@@ -156,7 +156,12 @@ contain is described in the spec, so these findings are enforced rather than jus
 | `/resolver/` | The `<results>` wrapper carries `@type`, echoing the identifier type. |
 | Index types | `/index/bogus/` returns `404` naming the allowed indexes: `author, awards, subject, language, format, targetaudience, readinglevel, type, genre, review`. The doc writes `subjects` (plural) and omits `review`. |
 | `sort` errors | An unknown `sort` yields `500` from the sorter, not a `409` validation error. Same for an unknown `s` subset. |
-| `output=json` | Undocumented, but real on `/search/`, `/details/` and `/availability/` — including error bodies. See caveats below. |
+| **`coversize` does not exist** | The doc says a larger cover can be had with `&coversize=large`. The service answers `409 FailedValidation — Unknown Parameter: coversize`. Parameter *names* are validated strictly, so an invented parameter breaks the request outright. How cover size is chosen is undocumented. |
+| 500 error code | A `500` reports `<code>InternalError</code>`, not `ServerError`. |
+| Trailing slash on `/holdings/` | Required, like every other path: `/holdings/Oost-Vlaanderen/Wetteren` → `404`, `/holdings/Oost-Vlaanderen/Wetteren/` → `200`. |
+| Resolver types are not validated | An unrecognised identifier type returns `200` with zero results rather than an error, so a typo fails silently. The enum in the spec is this document's constraint, not the service's. |
+| Index `pagesize` ceiling | The doc says 20 per page; the service reports `enforcedmaximum="100"` and silently clamps anything larger instead of erroring. |
+| `output=json` | Undocumented, but real. **Error** bodies honour it on *every* endpoint. **Success** bodies only on `/search/`, `/details/` and `/availability/` — elsewhere a 200 comes back as `Content-Type: application/json` wrapped around an XML error body. See caveats below. |
 | `/locations` | Not modelled. The doc's own example points at the legacy host `hs.aquabrowser.be`, and the path returns `404` on the current service. |
 
 ## The JSON format
@@ -206,8 +211,11 @@ Further gaps worth knowing before choosing JSON:
   `alsoAvailableAsCount`, `subject-local`.
 * The `facets` block is **silently dropped**: `refine=true` with `output=json` returns only
   `{meta, results}`, while the same query in XML returns `<facets>`.
-* On `/refine/`, `/index/` and `/resolver/` the service answers `Content-Type: application/json`
-  with an **XSLT error in the body**. Those operations are XML-only in the spec.
+* On `/refine/`, `/index/`, `/resolver/`, `/holdings/` and `/search-availability/` a **success**
+  response answers `Content-Type: application/json` with an **XML error in the body** — the
+  header lies, and a client that trusts it fails to parse. Their **error** responses, however,
+  are genuine JSON, which is why every operation accepts `output` and every error response in the
+  spec offers both content types.
 
 ## What the bundled test key cannot reach
 

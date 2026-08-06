@@ -103,7 +103,7 @@ describe('servers', () => {
 
   it('gives profile-less endpoints their own server override', () => {
     // /holdings and the global variants sit outside the profile prefix.
-    for (const path of ['/holdings/{holdingPath}']) {
+    for (const path of ['/holdings/{holdingPath}/']) {
       const item = spec.paths[path]
       expect(item, `${path} must exist`).toBeTruthy()
       expect(item.servers, `${path} must override the server`).toBeTruthy()
@@ -161,6 +161,15 @@ describe('operations', () => {
       const at = `${method.toUpperCase()} ${path}`
       expect(Object.keys(op.responses), `${at} needs a 200`).toContain('200')
       expect(Object.keys(op.responses), `${at} needs a 401`).toContain('401')
+    }
+  })
+
+  it('ends every path template with a slash, because the service requires one', () => {
+    // Not cosmetic: /search returns 404 and /search/ returns 200, and the same held for
+    // /holdings/{holdingPath}, which shipped without its slash. A path key is what a
+    // generated client builds its URL from, so getting this wrong breaks every call.
+    for (const path of Object.keys(spec.paths)) {
+      expect(path.endsWith('/'), `${path} must end with a slash`).toBe(true)
     }
   })
 
@@ -249,12 +258,30 @@ describe('path enums verified against the live API', () => {
 })
 
 describe('response bodies', () => {
-  it('offers JSON only on the three operations where output=json genuinely works', () => {
+  it('offers a JSON success body only where output=json genuinely works', () => {
+    // Success and error paths differ: only these three return real JSON from a 200. On the
+    // others, output=json yields a JSON content-type wrapped around an XSLT error.
     const jsonCapable = []
     for (const { op } of operations(spec)) {
       if (op.responses['200'].content?.['application/json']) jsonCapable.push(op.operationId)
     }
     expect(jsonCapable.sort()).toEqual(['getAvailability', 'getDetails', 'search'])
+  })
+
+  it('offers a JSON error body everywhere, because every endpoint honours output=json on errors', () => {
+    for (const [name, response] of Object.entries(spec.components.responses)) {
+      expect(Object.keys(response.content), `${name} must offer both XML and JSON`).toEqual(
+        expect.arrayContaining(['application/xml', 'application/json']),
+      )
+    }
+  })
+
+  it('lets every operation ask for JSON, since error bodies respect it', () => {
+    const outputRef = '#/components/parameters/output'
+    for (const { path, method, op } of operations(spec)) {
+      const names = (op.parameters ?? []).map((p) => p.$ref ?? p.name)
+      expect(names, `${method.toUpperCase()} ${path} should accept output`).toContain(outputRef)
+    }
   })
 
   it('serves XML from every 200', () => {

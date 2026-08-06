@@ -4,6 +4,7 @@ import { resolve } from 'node:path'
 import {
   loadSpec,
   stagingBase,
+  serverUrl,
   buildUrl,
   call,
   parseJson,
@@ -182,6 +183,191 @@ describe('the API key never escapes into output', () => {
     expect(redact('https://h/search/?q=a&authorization=deadbeefdeadbeef&lang=nl')).toBe(
       'https://h/search/?q=a&authorization=YOUR_API_KEY&lang=nl',
     )
+  })
+})
+
+describe('every declared parameter is one the API accepts', () => {
+  /**
+   * The service validates parameter *names* strictly and answers an unknown one with
+   * `409 FailedValidation — Unknown Parameter: x`. So a parameter invented from the prose
+   * documentation is not a cosmetic error: any client following the spec has its request
+   * rejected outright. `coversize` was exactly that.
+   *
+   * This drives the parameter list out of openapi.json rather than a hand-kept list, so a
+   * newly invented parameter fails here the moment it is added.
+   */
+
+  /** A value that is valid for the parameter, so only the *name* is under test. */
+  const SAMPLE = {
+    q: 'test',
+    lang: 'nl',
+    pagesize: '1',
+    page: '1',
+    curpage: '1',
+    refine: 'true',
+    dedup: 'true',
+    hith: 'true',
+    librarian: 'true',
+    global: 'false',
+    includeparent: 'true',
+    'show-region-profiles': 'false',
+    closeinfodays: '90',
+    count: '5',
+    facets: 'Format',
+    facet: 'Format(Book)',
+    sort: 'relevance',
+    s: 'cover',
+    detaillevel: 'default',
+    output: 'xml',
+    branch: 'Oost-Vlaanderen/Wetteren/Overbeke',
+    id: FIXTURES.recordId,
+    frabl: FIXTURES.frabl,
+    rctx: '',
+    // Kept so this test reports "Unknown Parameter" for anything reintroduced from the
+    // prose documentation, rather than failing for want of a sample value.
+    coversize: 'small',
+  }
+
+  /** Minimal request that succeeds on its own, so the added parameter is the only variable. */
+  const BASE = {
+    '/search/': { query: { q: 'test', pagesize: 1 } },
+    '/details/': { query: { id: FIXTURES.recordId } },
+    '/availability/': { query: { frabl: FIXTURES.frabl } },
+    '/refine/': { query: { lang: 'nl' } },
+    '/index/all/': { query: { lang: 'nl' } },
+    '/index/{indexType}/': { path: { indexType: 'author' }, query: { lang: 'nl' } },
+    '/resolver/{idType}/': { path: { idType: 'ean' }, query: { id: FIXTURES.ean } },
+  }
+
+  /** Resolve a possibly-$ref'd parameter object. */
+  function deref(p) {
+    return p.$ref ? spec.components.parameters[p.$ref.split('/').pop()] : p
+  }
+
+  // One sequential request per declared parameter, so this needs more than the default budget.
+  it('is not rejected with "Unknown Parameter" by any operation', { timeout: 180_000 }, async () => {
+    const rejected = []
+    const unreachable = []
+
+    for (const [path, base] of Object.entries(BASE)) {
+      const op = spec.paths[path].get
+      for (const raw of op.parameters ?? []) {
+        const param = deref(raw)
+        if (param.in !== 'query') continue
+        if (!(param.name in SAMPLE)) {
+          throw new Error(`no sample value for ${op.operationId}.${param.name} — add one`)
+        }
+        let res
+        try {
+          res = await get(path, {
+            ...base,
+            query: { ...base.query, [param.name]: SAMPLE[param.name] },
+          })
+        } catch {
+          // Staging drops connections intermittently. That says nothing about whether the
+          // parameter is valid, so record it and carry on rather than failing the sweep.
+          unreachable.push(`${op.operationId}.${param.name}`)
+          continue
+        }
+        const reason = xmlError(res.text)?.reason ?? ''
+        if (/Unknown Parameter/i.test(reason)) {
+          rejected.push(`${op.operationId}.${param.name}: ${reason}`)
+        }
+      }
+    }
+
+    if (unreachable.length) {
+      console.warn(`  not checked (staging unreachable): ${unreachable.join(', ')}`)
+    }
+    expect(rejected).toEqual([])
+  })
+})
+
+describe('output=json on the XML-only operations', () => {
+  // These lock down behaviour that is actively misleading, so that if the service ever fixes
+  // it the spec's warnings get revisited rather than quietly going stale.
+
+  it('claims a JSON content-type but returns an XML body on a 200', async () => {
+    for (const [path, opts] of [
+      ['/refine/', { query: { lang: 'nl', output: 'json' } }],
+      ['/index/all/', { query: { lang: 'nl', output: 'json' } }],
+      ['/index/{indexType}/', { path: { indexType: 'author' }, query: { lang: 'nl', output: 'json' } }],
+      ['/resolver/{idType}/', { path: { idType: 'ean' }, query: { id: FIXTURES.ean, output: 'json' } }],
+    ]) {
+      const res = await get(path, opts)
+      expect(res.status, path).toBe(200)
+      expect(res.contentType, path).toBe('application/json')
+      // The header lies — the payload is XML, and JSON.parse would throw on it.
+      expect(res.text.trimStart().startsWith('<'), `${path} should return an XML body`).toBe(true)
+      expect(() => parseJson(res.text)).toThrow()
+    }
+  })
+
+  it('does return real JSON for error bodies on those same operations', async () => {
+    for (const [path, opts] of [
+      ['/refine/', { query: { lang: 'not', output: 'json' } }],
+      ['/index/{indexType}/', { path: { indexType: 'bogus' }, query: { output: 'json' } }],
+      ['/resolver/{idType}/', { path: { idType: 'ean' }, query: { output: 'json' } }],
+    ]) {
+      const res = await get(path, opts)
+      expect(res.status, path).toBeGreaterThanOrEqual(400)
+      expect(res.contentType, path).toBe('application/json')
+      expect(parseJson(res.text).error.code, path).toBeTruthy()
+    }
+  })
+
+  it('reports a 500 as InternalError, in both XML and JSON', async () => {
+    const xml = await get('/search/', { query: { q: 'test', sort: 'bogus' } })
+    expect(xml.status).toBe(500)
+    expect(xmlError(xml.text).code).toBe('InternalError')
+
+    const json = await get('/search/', { query: { q: 'test', sort: 'bogus', output: 'json' } })
+    expect(json.status).toBe(500)
+    expect(json.contentType).toBe('application/json')
+    expect(parseJson(json.text).error.code).toBe('InternalError')
+  })
+})
+
+describe('quirks the spec documents', () => {
+  it('returns an empty 200 for an unrecognised resolver type, not a 404', async () => {
+    const res = await get('/resolver/{idType}/', {
+      path: { idType: 'bogus' },
+      query: { id: FIXTURES.ean },
+    })
+    expect(res.status).toBe(200)
+    expect(hasElement(res.text, 'itemid')).toBe(false)
+    // Which is why the spec no longer advertises a 404 here.
+    expect(spec.paths['/resolver/{idType}/'].get.responses['404']).toBeUndefined()
+  })
+
+  it('clamps index pagesize at the ceiling it reports, rather than erroring', async () => {
+    const res = await get('/index/{indexType}/', {
+      path: { indexType: 'author' },
+      query: { lang: 'nl', pagesize: 999 },
+    })
+    expect(res.status).toBe(200)
+    const enforced = Number(res.text.match(/enforcedmaximum="(\d+)"/)[1])
+    const echoed = Number(res.text.match(/<pagesize[^>]*>(\d+)<\/pagesize>/)[1])
+    expect(echoed).toBe(enforced)
+    // The schema must allow what the server accepts, or a generated client blocks it.
+    const schema = spec.paths['/index/{indexType}/'].get.parameters.find(
+      (p) => p.name === 'pagesize',
+    ).schema
+    expect(schema.maximum).toBe(enforced)
+  })
+
+  it('rejects holdings parameters it cannot parse with a 409', async () => {
+    // Production only — /staging/holdings is not deployed.
+    const base = serverUrl(spec, { env: '' }, spec.paths['/holdings/{holdingPath}/'].servers[0])
+    const res = await call(
+      buildUrl(base, '/holdings/{holdingPath}/', {
+        path: { holdingPath: 'Oost-Vlaanderen/Wetteren' },
+        query: { closeinfodays: 'abc' },
+      }),
+    )
+    expect(res.status).toBe(409)
+    expect(xmlError(res.text).code).toBe('FailedValidation')
+    expect(spec.paths['/holdings/{holdingPath}/'].get.responses['409']).toBeTruthy()
   })
 })
 
@@ -558,7 +744,7 @@ describe('errors', () => {
 describe('not exercisable from this environment', () => {
   it.skip('POST /search-availability/ with a real body — zbb is a union catalogue with no Wise locationcode (404 "holding does not have a wise locationcode"); needs a single-library profile such as wetteren, which this token is not entitled to', () => {})
 
-  it.skip('GET /holdings/{holdingPath} — /staging/holdings/… returns 502; only the production host serves it', () => {})
+  it.skip('GET /holdings/{holdingPath}/ — /staging/holdings/… returns 502; only the production host serves it', () => {})
 
   it.skip('GET /index/all/ without a profile — /staging/index/all/ returns 502; only the production host serves the global variant', () => {})
 
